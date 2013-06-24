@@ -19,27 +19,22 @@ public class PentagonCrazy
     //    ------------- End of createColorPalette recipe 
     //    DrawPentagon (recipe below) --#10
     //    ------------- Recipe for drawPentagon --#10
-    //    Do the following 200 times --#2
     for (int i = 1; i <= 200; i++)
     {
       //        AdjustPen (recipe below) --#9
       //        ------------- Recipe for adjustPen --#9
-      //        Change the color of the line the tortoise draws to the next color on the color wheel --#6
-      Tortoise.setPenColor(Colors.getRandomColor());
-      int penWidth = 2;
-      //increase pen width by 1
-      Tortoise.setPenWidth(penWidth);
+      Tortoise.setPenColor(ColorWheel.getNextColor());
+      int penWidth = Tortoise.getPenWidth();
+      Tortoise.setPenWidth(penWidth + 1);
       if (penWidth > 4)
       {
         Tortoise.setPenWidth(1);
       }
       //        ------------- End of adjustPen recipe 
-      //        Move the tortoise the length of a side --#4
       int sideLength = 100;
       Tortoise.move(sideLength);
       Tortoise.turn(360 / 5);
       Tortoise.turn(1);
-      //    Repeat
     }
     //    ------------- End of drawPentagon recipe
   }
