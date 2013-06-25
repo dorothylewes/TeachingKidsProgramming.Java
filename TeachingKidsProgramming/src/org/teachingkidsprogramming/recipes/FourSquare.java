@@ -7,16 +7,13 @@ public class FourSquare
 {
   public static void main(String[] args)
   {
-    //  Show the tortoise --#1
     Tortoise.show();
     Tortoise.setSpeed(10);
     for (int i = 1; i <= 4; i++)
     {
       drawSquare();
-      //      Turn the tortoise 90 degrees to the right --#10
       Tortoise.turn(90);
     }
-    //  Repeat
   }
   private static void drawSquare()
   {
